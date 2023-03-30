@@ -10,9 +10,9 @@ if (date = 2050) {
     console.log("May", 'Workers day')
 	count += 5
 
-	if (status == 'true') {
+	if (status == 'Student') {
 	  console.log('June', 'Youth Day')
-		let count = count + 1
+		count += 1
   }
 
 	console.log('August', 'Women’s Day')
@@ -20,8 +20,8 @@ if (date = 2050) {
 	console.log("December", 'Day of Reconciliation', 'Day of Goodwill')
 	count += 4
 
-	if (status == "false") {
-        console.log(date, 'Christmas Day')
+	if (status == "Parent") {
+        console.log("December", 'Christmas Day')
 		count += 1
   }
 
