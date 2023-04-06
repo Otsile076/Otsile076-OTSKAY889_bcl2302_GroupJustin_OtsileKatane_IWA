@@ -9,12 +9,17 @@ const sarahBalance = '-4582.21000111'
 const divider = '----------------------------------'
 
 // Only change below this line
-//separate Leo and Sarah with a line\
-const currency = 'R'
-const owed = parseInt(currency + " " + leoBalance \n currency + sarahBalance)
-const leo = (`${leoName}` +  " " + `${leoSurname}` + " " + "\(Owed:)\" + " " + 'R' + `${sarahBalance}`)
-const sarah = "{leoName} + {surname} + \"Owed\" + \"R\" + {sarahBalance}"
+let leoNewBalance = leoBalance*-1
+let sarahNewBalance = sarahBalance*-1
+const str = leoSurname.trimEnd()
+const str2 = sarahName.trimEnd()
+const owe = sarahNewBalance.toFixed(2);
+const owed = ("total amount oewd: " + 'R' + parseInt(leoNewBalance + sarahNewBalance))
+const leo = `${leoName} ${str} (Owed R${leoNewBalance})`
+const sarah = `${str2} ${sarahSurname} (Owed R ${owe})`
 const total = "Total amount owed: "
-const result = leo + sarah + divider + divider + total + owed + divider
+const result = (`${leo}\n ${sarah}\n\n ${divider} \n ${owed} \n ${divider}`)
 
+//console.log(leo)
+//console.log(sarah)
 console.log(result)
