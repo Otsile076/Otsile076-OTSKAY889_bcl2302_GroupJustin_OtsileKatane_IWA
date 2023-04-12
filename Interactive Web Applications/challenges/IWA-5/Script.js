@@ -25,9 +25,9 @@ let pens = 5 * 'NONE_SELECTED'
 
 
 if (location === location1 ) {
-	console.log(currencySA + shippingSA + shoes + toys + batteries)
+	console.log(currencySA +( shippingSA + shoes + toys + batteries))
 } else if(location === location2){
-	console.log(currencynam + shippingNAM + shoes + toys + shirts + batteries + pens)
+	console.log(currencynam + (shippingNAM + shoes + toys + shirts + batteries + pens))
 } else if(location === location3){
 	console.log(currencynam + shippingNAM + shoes + toys + shirts + batteries + pens)
 } else if(location === location4){

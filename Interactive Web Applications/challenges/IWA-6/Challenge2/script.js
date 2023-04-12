@@ -8,7 +8,7 @@ const minuteOfDay = 00;
 
 // change only below this line
 
-if((hourOfDay !== null) && (minuteOfDay !== null) && (hourOfDay === 00) && (minuteOfDay === 00)) {
+if((hourOfDay !== null) && (minuteOfDay !== null) && (hourOfDay === 0) && (minuteOfDay === 0)) {
 	const taxAsDecimal = parseFloat(tax) / 100;
   const startingAfterTax = salary * (1 - taxAsDecimal);
 	const balance = (startingAfterTax - transport - food - rent);
