@@ -6,23 +6,20 @@ let calculated = '1'
 
 
 const logCalc = () => { 
-    const isString = 'numerical-string' 
-    const calculatedAsNumber = isString ? parseInt(calculated) : calculated
-    calculated === calculatedAsNumber + 1 
+    const isString = typeof String == 'numerical-string' 
+    const calculatedAsNumber = isString ? parseNumber(calculated) : calculated
+    const calculated = calculatedAsNumber + 1 
 }
 
 const calcUser = () => {
-  if (calculated > 2) {
-    console.log('John')
-  } else if(calculated > 2) {
-    console.log('requesting')
-  } else console.log('idle')
- }
-  
- 
+  if (calculated >= 2) user = 'John'
+  if (calculated > 2) state = 'requesting'
+  if (calculated > 3) state = 'idle'
+}
+
 const checkUser = () => {
 	if (user && state === 'requesting') {
-		console.log(`User: ${user} (${calculated})`)
+		console.log(`User: ${user} ${calculated}`)
 	}
 }
 
