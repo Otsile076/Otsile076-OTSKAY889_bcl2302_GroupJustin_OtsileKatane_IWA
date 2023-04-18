@@ -70,9 +70,9 @@ const CorrectMinutes = copied.minutes
 const isEarlier = copied.date < holidays[6].date
 console.log('New date is earlier:', isEarlier)
 if (isEarlier) copied.date = correctDate
-//console.log('ID change:', holidays[6].id === copied.id)
-//console.log('Name change:', copied.name)
-//console.log('Date change:', copied.date)
+console.log('ID change:', holidays[6].id === copied.id)
+console.log('Name change:', copied.name)
+console.log('Date change:', copied.date)
 
 const firstHolidayTimestamp = { 
     holidays0: date.getTime(),
@@ -103,8 +103,8 @@ const firstMonth = firstHolidayTimestamp.getMonth
 const lastDay = lastHolidayTimestamp.getDate
 const lastMonth = lastHolidayTimestamp.getMonth
 
-console.log(firstHolidayTimestamp.holidays0)
-console.log(lastHolidayTimestamp.holidays0)
+console.log(firstDay)
+console.log(lastDay)
 
 const randomHoliday = holidays[Math.random]
 console.log(randomHoliday.date)
