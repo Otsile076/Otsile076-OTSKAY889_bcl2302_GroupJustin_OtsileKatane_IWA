@@ -17,13 +17,18 @@ const third = data.lists[2][1]
 const result = []
 
 const extractBiggest = () => {
-	if (first[-1] > second[-1]) {
-	    console.log(first)
+	
+
+	if(first[first.length - 1] >= second[second.length - 1] && first[first.length -1] >= third[third.length -1]){
+		return first.pop()
+
+
+	}else if(second[second.length -1] >= third[third.length -1]){
+		return second.pop()
+
+	}else {
+		return third.pop()
 	}
-	if (second[-1] > third[-1]) {
-		 console.log(second)
-	}
-	   else  console.log(third[-1])
 } 
 
 // Only edit above
