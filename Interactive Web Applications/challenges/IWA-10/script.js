@@ -5,7 +5,7 @@ const holidays = {
     0: {
         id: 0,
         name: 'Day of Reconciliation',
-        date: `16 December ${currentYear}`,
+        date: new Date(`16 December ${currentYear}`),
     },
     1: {
         id: 1,
@@ -74,34 +74,36 @@ console.log('ID change:', holidays[6].id === copied.id)
 console.log('Name change:', copied.name)
 console.log('Date change:', copied.date)
 
-const firstHolidayTimestamp = { 
-    holidays0: date.getTime(),
-    holidays1: date.getTime(),
-    holidays2: date.getTime(),
-    holidays3: date.getTime(),
-    holidays4: date.getTime(),
-    holidays5: date.getTime(),
-    holidays6: date.getTime(),
-    holidays7: date.getTime(),
-    holidays8: date.getTime(),
-} 
+const firstHolidayTimestamp = Math.min(
+    holidays[0].date.getTime(),
+    holidays[1].date.getTime(),
+    holidays[2].date.getTime(),
+    holidays[3].date.getTime(),
+    holidays[4].date.getTime(),
+    holidays[5].date.getTime(),
+    holidays[6].date.getTime(),
+    holidays[7].date.getTime(),
+    holidays[8].date.getTime(),
+    )
+ 
 
-const lastHolidayTimestamp = { 
-    holidays0: date.getTime(),
-    holidays1: date.getTime(),
-    holidays2: date.getTime(),
-    holidays3: date.getTime(),
-    holidays4: date.getTime(),
-    holidays5: date.getTime(),
-    holidays6: date.getTime(),
-    holidays7: date.getTime(),
-    holidays8: date.getTime(),
-}
+    const lastHolidayTimestamp = Math.max(
+        holidays[0].date.getTime(),
+        holidays[1].date.getTime(),
+        holidays[2].date.getTime(),
+        holidays[3].date.getTime(),
+        holidays[4].date.getTime(),
+        holidays[5].date.getTime(),
+        holidays[6].date.getTime(),
+        holidays[7].date.getTime(),
+        holidays[8].date.getTime(),
+        )
+    
 
-const firstDay = firstHolidayTimestamp.getDate
-const firstMonth = firstHolidayTimestamp.getMonth
-const lastDay = lastHolidayTimestamp.getDate
-const lastMonth = lastHolidayTimestamp.getMonth
+const firstDay = firstHolidayTimestamp.getDate()
+const firstMonth = firstHolidayTimestamp.getMonth()
+const lastDay = lastHolidayTimestamp.getDate()
+const lastMonth = lastHolidayTimestamp.getMonth()
 
 console.log(firstDay)
 console.log(lastDay)

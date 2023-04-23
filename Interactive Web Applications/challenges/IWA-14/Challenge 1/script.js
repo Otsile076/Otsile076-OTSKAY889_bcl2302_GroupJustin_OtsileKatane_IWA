@@ -2,11 +2,12 @@ const firstName = 'John';
 const age = 35;
 const hobby = 'Coding';
 
-const result = () => {
-  console.log(`Hello, ${firstName} (${age}). I love ${hobby}!`)
-  console.log(`Hello, ${firstName} (${age}). I love ${hobby}!`)
+  const sentence =(`Hello, ${firstName} ${age}. I love ${hobby}!`)
+
+
+const logTwice = function () {
+       console.log(sentence)
+       console.log(sentence)
 }
 
-result()
-
-//console.log(`Hello, ${firstName} (${age}). I love ${hobby}!`)
+logTwice()
