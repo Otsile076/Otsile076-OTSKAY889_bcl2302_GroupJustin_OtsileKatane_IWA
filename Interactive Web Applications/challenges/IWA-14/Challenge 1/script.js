@@ -5,9 +5,9 @@ const hobby = 'Coding';
   const sentence =(`Hello, ${firstName} ${age}. I love ${hobby}!`)
 
 
-const logTwice = function () {
-       console.log(sentence)
-       console.log(sentence)
+const logTwice = (parem) => {
+       console.log(parem)
+       console.log(parem)
 }
 
-logTwice()
+logTwice(sentence)
