@@ -6,17 +6,18 @@ let calculated = '1'
 
 
 const logCalc = () => { 
-    const isString = 'numerical-string';
+    const isString = typeof calculated === 'numerical-string';
     const calculatedAsNumber = isString ? parseint(calculated) : calculated;
     calculated = calculatedAsNumber + 1;
-    return calculated;
+  
 }
 
 const  calcUser = () => {
-  if (logCalc >= 1) user = 'John';
-  if (logCalc >= 2) state = 'requesting';
+  logCalc();
+  if (logCalc >= 2) user = 'John';
+  if (logCalc >= 2) state = 'state'
   if (logCalc >= 3) state = 'idle';
-  return calcUser;
+
 }
 
 const  checkUser = () => {
