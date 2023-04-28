@@ -32,37 +32,44 @@ const createData = () => {
 
     let startDay = current.day;
     let daysInMonth = getDaysInMonth(current);
+    console.log("days in month :" + daysInMonth);
+
     
-    const createArray = (length) => {
+
+    // const weeks = createArray(5);
+    // const days = createArray(7);
+        
+    
         const result = [];
     
-        for (let i = 0; i < length; i++) {
-            result
-        } 
-    }
+        
+    
+       
+;
+        for (let i = 0; i < 5; i++) {
+            let weekDaysArray=[];
+            for (let j = 0; j < daysInMonth; j++) {
+                let value = j - startDay
+                let isValid = j > 0 && j <= daysInMonth
+    
+                let dayToBePush = {
+                        dayOfWeek: j + 1,
+                        value: isValid && j,
+                    }
+                    weekDaysArray.push(dayToBePush);
+                    
+            }
+            let weekToBePushed = 
+                {
+                week: i + 1,
+                days: weekDaysArray
+            };
+            result.push(weekToBePushed);
+           
+        };
+        console.log("result :",result);
+        return result;
 
-    const weeks = createArray(5);
-    const days = createArray(7);
-    let value = null
-
-    for (weekIndex in weeks) {
-        value = [
-            {
-            week: weekIndex + 1,
-            days: []
-        }
-    ];
-
-        for (dayIndex in days) {
-            value = dayIndex - startDay
-            isValid = day > 0 && day <= daysInMonth
-
-            result[weekIndex].days = [{
-                dayOfWeek: dayIndex + 1,
-                value: isValid && day,
-            }]
-        }
-    }
 }
 
 const addCell = (existing, classString, value) => {
@@ -76,15 +83,17 @@ const addCell = (existing, classString, value) => {
 }
 
 const createHtml = (data) => {
+    console.log("data :" , data);
     let result = '';
 
     for (let week in [1,2,3,4,5]) {
         let inner = ""
         addCell(inner, 'table__cell table__cell_sidebar', 'Week {week}')
-    
-        for (let item in data.days) {
+        console.log("dayInData :" , data[week].days)
+        for (let item in data) {
+            console.log("item :" , item)
             //classString = table__cell
-						let isToday = new Date === item.value;
+						let isToday = new Date === new Date() + item;
             //let isWeekend = item.dayOfWeek[0] == 1 || item.dayOfWeek[0] == 7;
             let isAlternate = week / 2;
             let isWeekend = true;
