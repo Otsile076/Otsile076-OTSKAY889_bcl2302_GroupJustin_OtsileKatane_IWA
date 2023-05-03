@@ -32,15 +32,14 @@ const createData = () => {
 
     let startDay = current.day;
     let daysInMonth = getDaysInMonth(current);
-    console.log("days in month :" + daysInMonth);
 
     
 
-    // const weeks = createArray(5);
-    // const days = createArray(7);
+     //const weeks = createArray(5);
+     //const days = createArray(7);
         
     
-        const result = [];
+        let result = [];
     
         
     
@@ -66,8 +65,7 @@ const createData = () => {
             };
             result.push(weekToBePushed);
            
-        };
-        console.log("result :",result);
+        }
         return result;
 
 }
@@ -83,7 +81,6 @@ const addCell = (existing, classString, value) => {
 }
 
 const createHtml = (data) => {
-    console.log("data :" , data);
     let result = '';
 
     for (let week in [1,2,3,4,5]) {

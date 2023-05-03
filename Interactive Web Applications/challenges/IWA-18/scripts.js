@@ -69,13 +69,13 @@ const handleEditSubmit = (popup) => {
   const orderDelete = document.querySelector(`[data-id="${idRemove}"]`);
   orderDelete.remove();
   const overlay = html.edit.overlay;
-  const formData = new FormData(e.target);
+  const formData = new FormData(popup.target);
   const data = Object.fromEntries(formData);
   const newData = createOrderData(data);
   const htmlData = createOrderHtml(newData);
   const appended = document.querySelector(`[data-area="${newData.column}"]`);
   appended.appendChild(htmlData);
-  e.target.reset();
+  popup.target.reset();
   overlay.close();
 };
 const handleDelete = (popup) => {
@@ -124,14 +124,14 @@ const handleDragOver = (event) => {
   updateDraggingHtml({ over: column });
 };
 let dragged;
-const handleDragStart = (e) => {
-  dragged = e.target;
+const handleDragStart = (popup) => {
+  dragged = popup.target;
 };
-const handleDragDrop = (e) => {
-  e.target.append(dragged);
+const handleDragDrop = (popup) => {
+  popup.target.append(dragged);
 };
-const handleDragEnd = (e) => {
-  const background = e.target.closest("section");
+const handleDragEnd = (popup) => {
+  const background = popup.target.closest("section");
   background.style.backgroundColor = "";
 };
 for (const htmlArea of Object.values(html.area)) {
